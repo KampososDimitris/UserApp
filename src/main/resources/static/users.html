@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/app.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <h1>Users</h1>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/register.html">Register New User</a>
+    </nav>
+</header>
+
+<main>
+    <table id="usersTable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Filled dynamically by jQuery -->
+        </tbody>
+    </table>
+
+</main>
+
+<!-- User details modal -->
+<div id="userDetails" class="modal">
+    <div id="userDetailsLoading">Loading user data...</div>
+    <div id="userDetailsContent" style="display: none;">
+        <h2>User Details</h2>
+        <p><strong>Name:</strong> <span id="detailName"></span></p>
+        <p><strong>Surname:</strong> <span id="detailSurname"></span></p>
+        <p><strong>Gender:</strong> <span id="detailGender"></span></p>
+        <p><strong>Birthdate:</strong> <span id="detailBirthdate"></span></p>
+        <p><strong>Home Address:</strong> <span id="detailHomeAddress"></span></p>
+        <p><strong>Work Address:</strong> <span id="detailWorkAddress"></span></p>
+    </div>
+</div>
+
+<!-- Edit User Modal -->
+<div id="editUser" class="modal">
+    <div id="editUserDetailsLoading">Loading user data...</div>
+    <div id="editUserDetailsContent" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeEditUserModal">&times;</span>
+            <h2>Edit User</h2>
+            <form id="editUserForm">
+                <input type="hidden" id="editUserId">
+                <label>Name:</label><br>
+                <input type="text" id="editName" required><br><br>
+
+                <label>Surname:</label><br>
+                <input type="text" id="editSurname" required><br><br>
+
+                <label>Gender:</label><br>
+                <select id="editGender" required>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select><br><br>
+
+                <label>Birthdate:</label><br>
+                <input type="date" id="editBirthdate" required><br><br>
+
+                <label>Home Address:</label><br>
+                <input type="hidden" id="editHomeAddressId">
+                <textarea id="editHomeAddress"></textarea><br><br>
+
+                <label>Work Address:</label><br>
+                <input type="hidden" id="editWorkAddressId">
+                <textarea id="editWorkAddress"></textarea><br><br>
+
+                <button type="submit" id="submit-update">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css" />
+
+</body>
+</html>

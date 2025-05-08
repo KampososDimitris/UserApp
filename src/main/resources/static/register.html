@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register New User</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/app.js"></script>
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- jQuery UI JS -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+</head>
+<body>
+<header>
+    <h1>Register New User</h1>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/users.html">Display Users</a>
+    </nav>
+</header>
+
+<main>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="text" id="surname" placeholder="Surname" required><br>
+
+        <select id="gender" required>
+            <option value="">Select Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br>
+
+        <input type="date" id="birthdate" required><br>
+
+        <textarea id="homeAddress" placeholder="Home Address"></textarea><br>
+        <textarea id="workAddress" placeholder="Work Address"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+</body>
+</html>
